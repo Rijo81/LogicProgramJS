@@ -1,0 +1,405 @@
+<center><h1 style="color: blue;">Calculos Aritmeticos</h1></center>
+<p>Hacer los calculos de cada una de las siguientes formulas, 
+    las entradas podrán ser por teclado y las salidas por pantalla 
+     (tomar en cuenta todos los posibles casos de errores) </p>
+
+<center><table class="tbformula">
+    <tr>
+        <td class="tdformula">I = P i t</td>
+        <td class="tdcalculo">
+            <h3>Calculo del interés simple </h3>
+        
+            <input type="text" id="capitalP_is" name="capital" placeholder="Capital Principal" required><br>
+            <input type="text" id="intere_is" name="interes" placeholder="Interes" required><br>
+            <input type="text" id="time_is" name="time" placeholder="Tiempo" required><br>
+            <button id="btn_intereS" onclick="intereSimple()">Calcular Interes Simple</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Interes Simple</label>
+            <p id="result_is"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">P = I / i t</td>
+        <td class="tdcalculo">
+            <h3>Calculo del Capital con interés simple </h3>
+        
+            <input type="text" id="is_cis" name="capital" placeholder="Inicial" required><br>
+            <input type="text" id="intere_cis" name="interes" placeholder="Interes" required><br>
+            <input type="text" id="time_cis" name="time" placeholder="Tiempo" required><br>
+            <button id="btn_intereCis" onclick="capitalIS()">Calcular Capital IS</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Capital con Interes Simple</label>
+            <p id="result_cis"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">t = I / P i</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Tiempo con interés simple </h3>
+        
+            <input type="text" id="inicial_tis"  placeholder="Inicial" required><br>
+            <input type="text" id="capital_tis"  placeholder="Capital" required><br>
+            <input type="text" id="intere_tis"  placeholder="Intere" required><br>
+            <button id="btn_intereCis" onclick="timeIS()">Calcular Tiempo IS</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Tiempo con Interes Simple</label>
+            <p id="result_tis"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">i = I / P t</td>
+        <td class="tdcalculo">
+            <h3>Calcular la Tasa con interés simple </h3>
+        
+            <input type="text" id="inicial_tsis"  placeholder="Inicial" required><br>
+            <input type="text" id="capital_tsis"  placeholder="Capital" required><br>
+            <input type="text" id="time_tsis"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="tasaIS()">Calcular Tasa</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado de la Tasa con Interes Simple</label>
+            <p id="result_tsis"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">S = P( 1 + i t)</td>
+        <td class="tdcalculo">
+            <h3>Calcular Monto Simple </h3>
+        
+            <input type="text" id="capital_ms"  placeholder="Capital" required><br>
+            <input type="text" id="intere_ms"  placeholder="Interes" required><br>
+            <input type="text" id="time_ms"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="montoSimple()">Calcular Monto Simple</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Monto Simple</label>
+            <p id="result_ms"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">P = S / 1 + i t</td>
+        <td class="tdcalculo">
+            <h3>Calcular Capital Monto Simple </h3>
+        
+            <input type="text" id="monto_cms"  placeholder="Monto" required><br>
+            <input type="text" id="interes_cms"  placeholder="Interes" required><br>
+            <input type="text" id="time_cms"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="capitalMS()">Calcular Capital MS</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Capital Monto Simple</label>
+            <p id="result_cms"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">t = (S/P) - 1 / i</td>
+        <td class="tdcalculo">
+            <h3>Calcular Tiempo Monto Simple </h3>
+        
+            <input type="text" id="monto_tms"  placeholder="Monto" required><br>
+            <input type="text" id="capital_tms"  placeholder="Interes" required><br>
+            <input type="text" id="interes_tms"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="timeMS()">Calcular Tiempo MS</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Tiempo Monto Simple</label>
+            <p id="result_tms"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">i = (S/P) - 1 / t</td>
+        <td class="tdcalculo">
+            <h3>Calcular Tasa Interes Monto Simple</h3>
+        
+            <input type="text" id="monto_tsms"  placeholder="Monto" required><br>
+            <input type="text" id="capital_tsms"  placeholder="Interes" required><br>
+            <input type="text" id="time_tsms"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="tasaInteresMS()">Calcular Tasa IMS</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Tasa Interes MS</label>
+            <p id="result_tsms"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">I = P i (t / 360)</td>
+        <td class="tdcalculo">
+            <h3>Calcular Interes Simple con Tiempo Ordinario</h3>
+        
+            <input type="text" id="capital_isto"  placeholder="Capital" required><br>
+            <input type="text" id="interes_isto"  placeholder="Interes" required><br>
+            <input type="text" id="time_isto"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="intereSimpleTO()">Calcular Interes STO</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Interes Simple TO</label>
+            <p id="result_isto"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">I = P i (t / 365)</td>
+        <td class="tdcalculo">
+            <h3>Calcular Interes Simple con Tiempo Exacto</h3>
+        
+            <input type="text" id="capital_iste"  placeholder="Capital" required><br>
+            <input type="text" id="interes_iste"  placeholder="Interes" required><br>
+            <input type="text" id="time_iste"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="intereSimpleTE()">Calcular Interes STE</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Interes Simple TE</label>
+            <p id="result_iste"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">d = i / (1 + i t)</td>
+        <td class="tdcalculo">
+            <h3>Calcular de Tasa de Descuento</h3>
+        
+            <input type="text" id="interes_td"  placeholder="Interes" required><br>
+            <input type="text" id="time_td"  placeholder="Tiempo" required><br>
+            <button id="btn_calcul" onclick="tasaDescuento()">Calcular Tasa Descuento</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado de la Tasa de Descuento</label>
+            <p id="result_td"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">S = P (1 + i) ^n</td>
+        <td class="tdcalculo">
+            <h3>Calculo de Interes Compuesto</h3>
+        
+            <input type="text" id="capital_ic"  placeholder="Capital" required><br>
+            <input type="text" id="interes_ic"  placeholder="Interes" required><br>
+            <input type="text" id="n_ic"  placeholder="Elevado" required><br>
+            <button id="btn_calcul" onclick="interesCompuesto()">Calcular Interes Compuesto</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado de Interes Compuesto</label>
+            <p id="result_ic"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = (b x h) / 2</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Triagunlo</h3>
+        
+            <input type="text" id="base"  placeholder="Base" required><br>
+            <input type="text" id="altura"  placeholder="Altura" required><br>
+            <button id="btn_calcul" onclick="areaTriangulo()">Calcular Area Triangulo</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Triangulo</label>
+            <p id="result_at"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = b x h</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Rectangulo</h3>
+        
+            <input type="text" id="baser"  placeholder="Medidas de los lados" required><br>
+            <input type="text" id="alturar"  placeholder="Medidas de los lados" required><br>
+            <button id="btn_calcul" onclick="areaRectangulo()">Calcular Area Rectangulo</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Rectangulo</label>
+            <p id="result_ar"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = l^2 o A = d ^ 2 / 2</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Cuadrado</h3>
+        
+            <input type="text" id="lado"  placeholder="Medidas de los lados" required><br>
+            <button id="btn_calcul" onclick="areaCuadrado()">Calcular Area Cuadrado</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Cuadrado</label>
+            <p id="result_l"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = (d + d') / 2</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Rombo</h3>
+        
+            <input type="text" id="distancia"  placeholder="Medidas del Rombo" required><br>
+            <button id="btn_calcul" onclick="areaRombo()">Calcular Area Rombo</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Rombo</label>
+            <p id="result_rombo"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = h ((b + b) / 2)</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Trapecio</h3>
+        
+            <input type="text" id="baset"  placeholder="Medidas de la Base" required><br>
+            <input type="text" id="alturat"  placeholder="Medidas de la Altura" required><br>
+            <button id="btn_calcul" onclick="areaTrapecio()">Calcular Area Trapecio</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Trapecio</label>
+            <p id="result_trapecio"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = (a x 1 x n) / 2</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Poligono Regular</h3>
+        
+            <input type="text" id="apotema"  placeholder="Medidas de la Apotema" required><br>
+            <input type="text" id="lado_poligono"  placeholder="Medidas de Lado" required><br>
+            <input type="text" id="cantidad_lados"  placeholder="Cantidad de Lados" required><br>
+            <button id="btn_calcul" onclick="areaPoligonoRegular()">Calcular Area Poligono Regular</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Poligono Regular</label>
+            <p id="result_poligono"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">A = PI x r ^ 3</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Area de un Radio</h3>
+        
+            <input type="text" id="radio"  placeholder="Medidas del Radio" required><br>
+            <button id="btn_calcul" onclick="areaRadio()">Calcular Area Radio</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Area Radio</label>
+            <p id="result_radio"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = h x b</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen del Prisma</h3>
+        
+            <input type="text" id="altura_prisma"  placeholder="Medidas de la Altura" required><br>
+            <input type="text" id="base_prisma"  placeholder="Medidas de la Base" required><br>
+            <button id="btn_calcul" onclick="volumenPrisma()">Calcular Volumen Prisma</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Prisma</label>
+            <p id="result_prisma"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = h x l x a</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen del Ortoedro</h3>
+        
+            <input type="text" id="profundo_vo"  placeholder="Medidas de Profundidad" required><br>
+            <input type="text" id="largo_vo"  placeholder="Medidas del largo" required><br>
+            <input type="text" id="altura_vo"  placeholder="Altura" required><br>
+            <button id="btn_calcul" onclick="volumenOrtoedro()">Calcular Volumen Ortoedro</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Ortoedro</label>
+            <p id="result_ortoedro"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = a ^ 3</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen del Cubo</h3>
+        
+            <input type="text" id="cubo"  placeholder="Medidas del cubo" required><br>
+            <button id="btn_calcul" onclick="volumenCubo()">Calcular Volumen Cubo</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Cubo</label>
+            <p id="result_cubo"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = (1 / 3) . (h x b)</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen de Piramide</h3>
+            
+            <input type="text" id="base_piramide"  placeholder="Medidas de la Base" required><br>
+            <input type="text" id="altura_piramide"  placeholder="Medidas de la Altura" required><br>
+            <button id="btn_calcul" onclick="volumenPiramide()">Calcular Volumen Piramide</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Piramide</label>
+            <p id="result_piramide"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = h x PI x r ^ 2</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen de Cilindro</h3>
+            
+            <input type="text" id="radio_cilindro"  placeholder="Medidas de la Base" required><br>
+            <input type="text" id="altura_cilindro"  placeholder="Medidas de la Altura" required><br>
+            <button id="btn_calcul" onclick="volumenCilindro()">Calcular Volumen Cilindro</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Cilindro</label>
+            <p id="result_cilindro"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = (1 / 3) . (h x PI x r ^ 2)</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen de Cono</h3>
+            
+            <input type="text" id="radio_cono"  placeholder="Medidas de la Base" required><br>
+            <input type="text" id="altura_cono"  placeholder="Medidas de la Altura" required><br>
+            <button id="btn_calcul" onclick="volumenCono()">Calcular Volumen Cono</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Cono</label>
+            <p id="result_cono"></p>
+        </td>
+    </tr>
+    <tr>
+        <td class="tdformula">V = (4 / 3) . (PI x r ^ 3)</td>
+        <td class="tdcalculo">
+            <h3>Calcular el Volumen de una Esfera</h3>
+        
+            <input type="text" id="radio_esfera"  placeholder="Medidas del Radio" required><br>
+            <button id="btn_calcul" onclick="volumenEsfera()">Calcular Volumen Esfera</button>
+      
+        </td>
+        <td class="tdresult">
+            <label class="lb-title">Resultado del Volumen Esfera</label>
+            <p id="result_esfera"></p>
+        </td>
+    </tr>   
+</table></center>
